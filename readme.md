@@ -4,3 +4,11 @@ This application that was created as part of the Broadcom CodeWeek, initiative w
 
 It allows booking of rooms used for bigger events (trainings, all hands, customer meetings).
 
+## Architecture overview
+
+## Technology used
+
+## Usage
+
+## Build and deployment instructions
+
