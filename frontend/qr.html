@@ -1,0 +1,96 @@
+<html>
+
+<body>
+    <center>
+        <h1>Broadcom Prague Meeting room QR codes</h1>
+    </center>
+    <br><br>
+    <script>
+        var urlPrefix = "https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=https%3A%2F%2Fcalendar.google.com%2Fcalendar%2Fb%2F1%2Fembed%3Fctz%3DEurope%2FPrague%26mode%3Dagenda%26showNav%3D0%26showTabs%3D0%26wkst%3D2%26showPrint%3D0%26showCalendars%3D0%26showDate%3D0%26showTz%3D0%26src%3Dbroadcom.com_"
+        var urlSufix = "%40resource.calendar.google.com"
+
+        var rooms = {
+            "Numenor": "3930313737323533393337",
+            "Rivendell": "3735393737393230333533",
+            "Validor": "3231333739343230353135",
+            "Ada Lovelace": "31303638383332313933",
+            "Alan Turing": "3630363639333331363235",
+            "Charles Babbage": "3134363639393735333537",
+            "Edgar F. Codd": "3730383730343735313436",
+            "George Boole": "3537343730393735393034",
+            "Gottfried Leibniz": "32383036383333313538",
+            "Grace Hopper": "3636353731343735343832",
+            "Jara Cimrman": "3337313731393736333234",
+            "John Von Neuman": "3130373333313835313239",
+            "Noam Chomsky": "3137393333363835383032",
+            "Satoshi Nakamoto": "3132303334313835323837",
+            "Belfalas": "35373337343133323730",
+            "Fangorn": "3734393734363333383233",
+            "Grey Havens": "32303735323533383831",
+            "Isengard": "39383735373533343733",
+            "Mordor": "3833333736323533383836",
+            "Mount Doom": "3332393736373533323339",
+            "Rohan": "33383637383431393736",
+            "Snowbourn": "3330363738393230373036"
+        }
+    </script>
+</body>
+<style>
+    .container {
+        margin: auto;
+    }
+
+    .responsive-image {
+        max-width: 100%;
+    }
+
+    .cell img {
+        display: block;
+    }
+
+    .label {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: large;
+        text-align: center;
+    }
+
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .cell {
+        width: 210px;
+    }
+
+    @media print {
+        .cell {
+            page-break-inside: avoid;
+        }
+    }
+</style>
+
+<div class="container">
+    <div id="grid" class="grid"></div>
+</div>
+
+<script>
+    function addRow(name, id) {
+        const div = document.createElement('div');
+
+        div.className = 'cell';
+        var url = urlPrefix + id + urlSufix;
+        div.innerHTML = '<div class="label">' + name + '</div><img src="' + url + '" class="responsive-image"><div></div>';
+
+        document.getElementById('grid').appendChild(div);
+    }
+    for (var key in rooms) {
+        if (rooms.hasOwnProperty(key)) {
+            //console.log(key + " -> " + room[key]);
+            addRow(key, rooms[key]);
+        }
+    }
+</script>
+
+</html>
