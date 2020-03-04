@@ -1,8 +1,8 @@
 all: src/* frontend
-	cargo build --release
-
-dev: src/* frontend
 	cargo build
+
+prod: src/* frontend
+	cargo build --release
 
 docs: src/*
 	cargo doc --no-deps
