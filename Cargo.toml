@@ -1,0 +1,31 @@
+[package]
+name = "backend"
+version = "0.1.0"
+authors = ["Dawid J. Kubis <dawidk.kubis3@gmail.com>", "Lukáš Hozda <luk.hozda@gmail.com>", "Lukáš Veškrna <lukas.veskrna@gmail.com>"]
+edition = "2018"
+default-run = "backend"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = "0.4.2"
+dotenv = "0.15.0"
+serde = { version = "1.0.103", features = ["derive"] }
+serde_json = "1.0.42"
+rocket_cors = "0.5.1"
+base64 = "0.11.0"
+sled = "0.29"
+lazy_static = "1.4"
+serde_cbor = "0.10.2"
+ferris_print = "0.1"
+scanln = "0.1"
+yansi = "0.5"
+
+[dependencies.chrono]
+version = "0.4.10"
+features = ["serde"]
+
+[dependencies.rocket_contrib]
+version = "0.4.2"
+default-features = false
+features = ["json"]
