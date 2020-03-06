@@ -72,9 +72,9 @@ Resturns JSON with following structure:
 Rust endpoints
 ## FILTER
 # Description:
- - Podle zadáných časů vrátí reservace, které v zadaných místnostech v té době probíhají/budou probíhat
+ -Based on the entered date/time returns booking details for the specified rooms
 # Params:
- - Místnosti (rooms): místnosti jaké chceme filtrovat
+ - Mistnosti (Rooms) : the rooms we wanna apply thre filter on
  - 0 - nothing
  - 1 - left room
  - 2 - right room
@@ -85,8 +85,8 @@ Rust endpoints
  - JSON files with the parametter "results", this is an distionary of results (bookings in the selected room for specified time/date)(booking dictionary)
 ## LIST
 # Description:
- - Vrátí všechny rezervace z databáze
+ - Returns list (dictioinary) of bookings from the database
 # Params:
- - Nebere parametry
+ - No params accepted
 # Returns:
- - JSON file with parametter "results", kde jsou data (booking dictionary) všech rezervací
+ - JSON file with parametter "results", with data for all room bookings (booking dictionary)
