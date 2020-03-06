@@ -74,7 +74,7 @@ Rust endpoints
 # Description:
  -Based on the entered date/time returns booking details for the specified rooms
 # Params:
- - Mistnosti (Rooms) : the rooms we wanna apply thre filter on
+ - Mistnosti (Rooms) : the rooms we want the filter to be applied to
  - 0 - nothing
  - 1 - left room
  - 2 - right room
