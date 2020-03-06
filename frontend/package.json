@@ -24,7 +24,7 @@
     "react-datetime-range-picker": "^2.0.5",
     "react-dom": "^16.12.0",
     "react-hooks-global-state": "^0.16.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "^3.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
