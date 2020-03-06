@@ -48,7 +48,7 @@ cargo run --release
 ```
 
 ## /rgi/events/<id>
-Vrací JSON s následující strukturou
+Resturns JSON with following structure:
 - id
 - name
 - description
@@ -59,35 +59,34 @@ Vrací JSON s následující strukturou
 - layout
 - approved
   
- V případě chyby vrátí JSON s atributem result, který bude označovat chybu
+ In case of error it returns JSON with attribut result, which indicates the error details
  
- ## Ostatní endpointy
- Vrací JSON s atributem result, který označuje výsledek nebo chybu
+ ## The other endpoints
+ Return JSON with attribut result, which indicates result or error
  
- ## Tabulka result
- - result: 0    - všechno fungovalo
- - result: 1    - nenašlo to rezervaci podle ID
- - result: 2    - Už existuje rezervace ve stejném čase a ve stejné místnosti
+ ## Table result
+ - result: 0    - everything fine
+ - result: 1    - we did not find booking related to the ID
+ - result: 2    - there is already boooking request in place for specified date/time
 
-
-Rustí endpointy
+Rust endpoints
 ## FILTER
-# Popis:
+# Description:
  - Podle zadáných časů vrátí reservace, které v zadaných místnostech v té době probíhají/budou probíhat
-# Parametry:
+# Params:
  - Místnosti (rooms): místnosti jaké chceme filtrovat
- - 0 - žádná místnost
- - 1 - levá místnost
- - 2 - pravá místnost
- - 3 - obě místnosti
- - Začátek (begin_time): od kdy
- - Konec (end_time) : do kdy
-# Vrací:
- - JSON soubor s parametrem výseldky ("results"), kde je pole výsledků (rezervací v zadaných místnostech v zadaných časech)(booking dictionary)
+ - 0 - nothing
+ - 1 - left room
+ - 2 - right room
+ - 3 - both rooms
+ - Begin (begin_time): from
+ - End (end_time) : till
+# Returns:
+ - JSON files with the parametter "results", this is an distionary of results (bookings in the selected room for specified time/date)(booking dictionary)
 ## LIST
-# Popis:
+# Description:
  - Vrátí všechny rezervace z databáze
-# Parametry:
+# Params:
  - Nebere parametry
-# Vrací:
- - JSON soubor s paramterem výsledky ("results"), kde jsou data (booking dictionary) všech rezervací
+# Returns:
+ - JSON file with parametter "results", kde jsou data (booking dictionary) všech rezervací
