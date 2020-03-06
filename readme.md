@@ -1,3 +1,5 @@
+[![Gitpod Almost-Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ishche/auditorium-booking) 
+
 # Auditorium Booking
 
 This application that was created as part of the Broadcom CodeWeek, initiative where students can practise their coding skill on  examplesfrom real life.
