@@ -82,11 +82,11 @@ Resturns JSON with following structure:
  - Begin (begin_time): from
  - End (end_time) : till
 # Returns:
- - JSON files with the parametter "results", this is an distionary of results (bookings in the selected room for specified time/date)(booking dictionary)
+ - JSON files with the parameter "results", this is an distionary of results (bookings in the selected room for specified time/date)(booking dictionary)
 ## LIST
 ### Description:
- - Returns list (dictioinary) of bookings from the database
+ - Returns list (dictionary) of bookings from the database
 ### Params:
  - No params accepted
 ### Returns:
- - JSON file with parametter "results", with data for all room bookings (booking dictionary)
+ - JSON file with parameter "results", with data for all room bookings (booking dictionary)
