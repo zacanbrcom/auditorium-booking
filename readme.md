@@ -64,12 +64,12 @@ Resturns JSON with following structure:
  ## The other endpoints
  Return JSON with attribut result, which indicates result or error
  
- ## Table result
+ ### Table result
  - result: 0    - everything fine
  - result: 1    - we did not find booking related to the ID
  - result: 2    - there is already boooking request in place for specified date/time
 
-Rust endpoints
+# Rust endpoints
 ## FILTER
 # Description:
  -Based on the entered date/time returns booking details for the specified rooms
@@ -84,9 +84,9 @@ Rust endpoints
 # Returns:
  - JSON files with the parametter "results", this is an distionary of results (bookings in the selected room for specified time/date)(booking dictionary)
 ## LIST
-# Description:
+### Description:
  - Returns list (dictioinary) of bookings from the database
-# Params:
+### Params:
  - No params accepted
-# Returns:
+### Returns:
  - JSON file with parametter "results", with data for all room bookings (booking dictionary)
