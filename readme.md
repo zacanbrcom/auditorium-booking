@@ -71,9 +71,9 @@ Resturns JSON with following structure:
 
 # Rust endpoints
 ## FILTER
-# Description:
+### Description:
  -Based on the entered date/time returns booking details for the specified rooms
-# Params:
+### Params:
  - Mistnosti (Rooms) : the rooms we want the filter to be applied to
  - 0 - nothing
  - 1 - left room
@@ -81,7 +81,7 @@ Resturns JSON with following structure:
  - 3 - both rooms
  - Begin (begin_time): from
  - End (end_time) : till
-# Returns:
+### Returns:
  - JSON files with the parameter "results", this is an distionary of results (bookings in the selected room for specified time/date)(booking dictionary)
 ## LIST
 ### Description:
