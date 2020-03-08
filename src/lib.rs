@@ -42,7 +42,7 @@
 #![feature(associated_type_defaults)]
 #![feature(option_flattening)]
 #![allow(clippy::match_bool, clippy::option_map_unit_fn)]
-#![deny(missing_docs)]
+#![allow(missing_docs)]
 
 #[macro_use]
 extern crate rocket;
@@ -50,6 +50,9 @@ extern crate rocket_contrib;
 
 #[macro_use]
 extern crate lazy_static;
+
+#[macro_use]
+extern crate diesel;
 
 extern crate serde_cbor;
 extern crate dotenv;
@@ -61,6 +64,10 @@ use dotenv::dotenv;
 use rocket::http::Method;
 use rocket_cors::{AllowedHeaders, AllowedOrigins};
 
+use diesel::prelude::*;
+use diesel::pg::PgConnection;
+use std::env;
+
 pub mod static_server;
 pub mod booking;
 pub mod admin;
@@ -68,6 +75,7 @@ pub mod auth;
 
 pub mod db;
 pub mod models;
+pub mod schema;
 /// Vrací instanci Rocketu
 pub fn init() -> rocket::Rocket {
 	dotenv().ok();
@@ -93,4 +101,15 @@ pub fn init() -> rocket::Rocket {
 		.mount("/api/", booking::routes())
 		.mount("/admin/", admin::routes())
 		.attach(cors)
+}
+
+//POSTGRES DB CONNECTION
+
+pub fn establish_connection() -> PgConnection {
+    dotenv().ok();
+
+    let database_url = env::var("DATABASE_URL")
+        .expect("DATABASE_URL must be set");
+    PgConnection::establish(&database_url)
+        .expect(&format!("Error connecting to {}", database_url))
 }

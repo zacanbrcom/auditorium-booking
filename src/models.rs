@@ -119,3 +119,11 @@ pub struct User {
 	/// role
 	pub role: String,
 }
+
+#[derive(Queryable)]
+pub struct Audit {
+	pub event_type: String,
+	pub created_on: String, //should be converted into datetime
+	pub user_id: String,
+	pub description: String
+}
