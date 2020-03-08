@@ -20,7 +20,7 @@ serde_cbor = "0.10.2"
 ferris_print = "0.1"
 scanln = "0.1"
 yansi = "0.5"
-diesel = {version="1.4.2", features=["postgres"]}
+diesel = {version="1.4.2", features=["postgres", "chrono"]}
 
 [dependencies.chrono]
 version = "0.4.10"

@@ -1,9 +1,11 @@
 //! contains database models and helper structs
 
 use serde::{Serialize, Deserialize};
-use chrono::{DateTime, offset::Utc};
+use chrono::{DateTime, offset::Utc, NaiveDateTime};
 
 use std::convert::From;
+
+use crate::schema::*;
 
 /// Model rezervace, tak jak je uložena v databázi
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -120,10 +122,29 @@ pub struct User {
 	pub role: String,
 }
 
-#[derive(Queryable)]
+#[derive(Queryable, Debug)]
 pub struct Audit {
-	pub event_type: String,
-	pub created_on: String, //should be converted into datetime
-	pub user_id: String,
-	pub description: String
+	pub event_type: Option<String>,
+	pub created_on: Option<String>, //should be converted into datetime
+	pub user_id: Option<String>,
+	pub description: Option<String>
 }
+
+#[derive(Insertable, Queryable)]
+#[table_name = "audit"]
+pub struct NewAudit<'a> {
+	event_type: Option<String>,
+	created_on: Option<chrono::NaiveDateTime>,
+	user_id: Option<String>,
+	description: &'a str
+}
+
+pub fn new_audit<'a>(description: &'a str) -> NewAudit<'a> {
+    NewAudit {
+		created_on: None,
+		event_type: None,
+		user_id: None,
+        description
+    }
+}
+
