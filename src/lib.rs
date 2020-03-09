@@ -72,6 +72,7 @@ pub mod static_server;
 pub mod booking;
 pub mod admin;
 pub mod auth;
+pub mod audit;
 
 pub mod db;
 pub mod models;
@@ -100,6 +101,7 @@ pub fn init() -> rocket::Rocket {
 		.mount("/", routes![static_server::index, static_server::frontend, static_server::favicon, auth::me])
 		.mount("/api/", booking::routes())
 		.mount("/admin/", admin::routes())
+		.mount("/audit/", audit::routes())
 		.attach(cors)
 }
 
